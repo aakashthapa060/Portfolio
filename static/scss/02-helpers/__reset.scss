@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1,h2,h3,h4,h5,h,p{
+    font-size: 16px;
+}
+
+ul{
+    width: auto;
+    height: auto;
+    li{
+        list-style: none;
+    }
+}
+
+ol{
+    width: auto;
+    height: auto;
+    li{
+        list-style: none;
+    }
+}
+
+a{
+    text-decoration: none;
+    color: $primary-blue;
+}
