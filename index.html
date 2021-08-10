@@ -1,35 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./static/css/locomotive-scroll.css">
     <link rel="stylesheet" href="static/css/main.css">
+    <!-- Box Icon -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Splitting js -->
+    <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css" />
+    <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting-cells.css" />
+    <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script src="./static/js/locomotive.js"></script>
 </head>
+
 <body>
-    <h1>Hello</h1>
-    <h2>h2</h2>
-    <ul>
-        <li>asdf;lkasjdf</li>
-        <li>asdf;lkasjdf</li>
-        <li>asdf;lkasjdf</li>
-        <li>asdf;lkasjdf</li>
+    <div data-scroll-container>
+        <nav>
+            <div class="nav_logo">
+                <h2><a href="#">Aakash</a></h2>
+            </div>
+            <div class="nav_items">
+                <div class="nav_links">
+                    <ul>
+                        <li class="nav_item"><a href="#" class = "nav-link" data-splitting >Playground</a></li>
+                        <li class="nav_item"><a href="#" class = "nav-link" data-splitting>About me</a></li>
+                        <li class="nav_item"><a href="#" class = "nav-link" data-splitting>Services</a></li>
 
-    </ul>
-    <a href="" class="btn btn-warning">hneadsf</a>
-    <a href="" class="btn btn-primary">hneadsf</a>
-    <a href="" class="btn btn-success">hneadsf</a>
-    <a href="" class="btn btn-danger bd-rd-20-per">hneadsf</a>
-    <a href="" class="btn btn-secondary">hneadsf</a>
+                        <li class="nav_item navDropDown-btn" ><a href="#" class = "nav-link" data-splitting>Connect <span class="icon"><i class='bx bxs-down-arrow'></i></span></a>
+                            <ol class="drop_down">
+                                <div class="drop_down_container">
+                                    <li><a href="#" class="insta">Instagram</a></li>
+                                    <li><a href="#" class="github">Github</a></li>
+                                    <li><a href="#" class="fb">Facebook</a></li>
+                                    <li><a href="#" class="gmail">Gmail</a></li>
+                                </div>
+                            </ol>
+                        </li>
 
-    <div class="flex-jc-se helo">
-        <a href="#">Helo</a>
-        <a href="#">Hlo</a>
-        <a href="#">Ho</a>
-        <a href="#">o</a>
+                    </ul>
+                </div>
+            </div>
+            <div class="newNav">
+                <div class="newNav_container">
+                    <h2 class="menu">Menu</h2>
+                    <ul>
+                        <li><a href="#" class="newNav-item" data-splitting>Home</a></li>
+                        <li><a href="#"  class="newNav-item" data-splitting>Showcase</a></li>
+                        <li><a href="#"  class="newNav-item" data-splitting>About Me</a></li>
+                        <li><a href="#"  class="newNav-item" data-splitting>Service</a></li>
 
+                    </ul>
+
+                    <div class="contact">
+                        <h2>Get in touch</h2>
+                        <a href="mailto:aakashmanm3@gmail.com">aakashmanm3@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+            <div class="hamBurger-menu">
+                <div class="hamBurger-container">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+
+
+            </div>
+        </nav>
     </div>
-
 </body>
+<script>Splitting();</script>
+<script src="./static/js/nav.js"></script>
+
+<script src="./static/js/main.js"></script>
+
 </html>
