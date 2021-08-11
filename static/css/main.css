@@ -5,6 +5,10 @@
   font-family: "averta", sans-serif;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 h1, h2, h3, h4, h5, h, p {
   font-size: 16px;
 }
@@ -70,6 +74,8 @@ nav {
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
+  z-index: 2;
+  position: relative;
 }
 
 nav .nav_logo {
@@ -131,6 +137,8 @@ nav .nav_items .nav_links ul .nav_item ol {
   border: 1px solid #b1b1b1;
   border-radius: 5px;
   display: none;
+  z-index: 2;
+  background-color: #fff;
 }
 
 nav .nav_items .nav_links ul .nav_item ol .drop_down_container {
@@ -193,6 +201,9 @@ nav .hamBurger-menu {
 }
 
 @media only screen and (max-width: 600px) {
+  nav {
+    position: initial;
+  }
   nav .nav_items {
     display: none;
   }
@@ -204,6 +215,7 @@ nav .hamBurger-menu {
     flex-direction: row;
     width: 100%;
     height: 100vh;
+    z-index: 4;
     top: 0;
     right: 0;
     background: #fff;
@@ -311,6 +323,377 @@ nav .hamBurger-menu {
   }
   100% {
     top: 0;
+  }
+}
+
+.heroSection {
+  width: 1000px;
+  height: 650px;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  z-index: -1;
+}
+
+.heroSection .wrapper .heroContent {
+  width: auto;
+  height: auto;
+}
+
+.heroSection .wrapper .heroContent .HeroName {
+  font-size: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  .heroSection .wrapper .heroContent .HeroName {
+    font-size: 16px;
+  }
+}
+
+.heroSection .wrapper .heroContent .HeroWork {
+  margin-bottom: 20px;
+}
+
+.heroSection .wrapper .heroContent .HeroWork h1 {
+  font-size: 100px;
+  font-weight: lighter;
+}
+
+.heroSection .wrapper .heroContent .HeroWork h1 span {
+  position: relative;
+  display: block;
+}
+
+.heroSection .wrapper .heroContent .HeroWork h1 span::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transform-origin: 100% 0;
+  background-color: #fff;
+}
+
+@media only screen and (max-width: 950px) {
+  .heroSection .wrapper .heroContent .HeroWork h1 {
+    font-size: 70px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .heroSection .wrapper .heroContent .HeroWork h1 {
+    font-size: 40px;
+  }
+}
+
+.heroSection .wrapper .heroContent p {
+  margin-bottom: 30px;
+}
+
+@media only screen and (max-width: 600px) {
+  .heroSection .wrapper .heroContent p {
+    font-size: 14px;
+  }
+}
+
+.heroSection .wrapper .heroContent a {
+  padding: 8px 17px;
+  font-weight: bold;
+  border: 2px solid #111;
+}
+
+@media only screen and (max-width: 600px) {
+  .heroSection .wrapper .heroContent a {
+    padding: 4px 12px;
+    font-size: 14px;
+  }
+}
+
+.heroSection .wrapper .heroContent a:hover {
+  border: none;
+}
+
+.heroSection .wrapper .heroContent .glitch-it .char,
+.heroSection .wrapper .heroContent .glitch-it .char:before,
+.heroSection .wrapper .heroContent .glitch-it .char:after {
+  transition: color 0.2s linear;
+  animation-duration: 0.6s, 0.4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: steps(1);
+  animation-delay: calc( -0.1s * var(--char-index));
+}
+
+.heroSection .wrapper .heroContent .glitch-it .char:before,
+.heroSection .wrapper .heroContent .glitch-it .char:after {
+  visibility: visible;
+  opacity: 0;
+  mix-blend-mode: overlay;
+  transition-property: opacity;
+  animation-name: glitch-anim, glitch-bounce;
+  animation-play-state: paused;
+}
+
+.heroSection .wrapper .heroContent .glitch-it .char:before {
+  color: #5986f8;
+  animation-delay: calc( -0.02s * var(--char-index));
+}
+
+.heroSection .wrapper .heroContent .glitch-it .char:after {
+  color: #f0495f;
+  animation-delay: calc( -.5s * var(--char-index));
+}
+
+.heroSection .wrapper .heroContent .glitch-it:hover .char {
+  color: rgba(80, 77, 77, 0.8);
+  animation-name: glitch-bounce;
+}
+
+.heroSection .wrapper .heroContent .glitch-it:hover .char:before,
+.heroSection .wrapper .heroContent .glitch-it:hover .char:after {
+  opacity: 1;
+  animation-play-state: running;
+}
+
+@keyframes glitch-bounce {
+  20% {
+    transform: translate(-1%, 0%);
+  }
+  40% {
+    transform: translate(14%, -2%);
+  }
+  50% {
+    transform: translate(-5%, 5%);
+  }
+  65% {
+    transform: translate(1%, -2%);
+  }
+  80% {
+    transform: translate(-3%, 2%);
+  }
+}
+
+@keyframes glitch-anim {
+  0% {
+    clip-path: polygon(0 70%, 100% 70%, 100% 75%, 0 75%);
+  }
+  20% {
+    clip-path: polygon(0 10%, 100% 10%, 100% 20%, 0 20%);
+  }
+  40% {
+    clip-path: polygon(0 33%, 100% 33%, 100% 33%, 0 33%);
+  }
+  60% {
+    clip-path: polygon(0 50%, 100% 50%, 100% 20%, 0 20%);
+  }
+  80% {
+    clip-path: polygon(0 80%, 100% 80%, 100% 80%, 0 80%);
+  }
+  100% {
+    clip-path: polygon(0 70%, 100% 70%, 100% 80%, 0 80%);
+  }
+}
+
+.heroSection .wrapper .floating-items a {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.193);
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  z-index: -1;
+  justify-content: center;
+}
+
+.heroSection .wrapper .floating-items a span img {
+  width: 30px;
+  z-index: -10;
+}
+
+.heroSection .wrapper .floating-items a::before {
+  transition: .5s ease;
+}
+
+.heroSection .wrapper .floating-items a:hover::before {
+  width: 0px;
+  height: 0px;
+}
+
+.heroSection .wrapper .floating-items .facebook {
+  top: 40px;
+  right: -50px;
+  animation: fbIcon 5s linear infinite;
+}
+
+.heroSection .wrapper .floating-items .facebook:before {
+  content: '';
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border: 1px solid #e6e6e6;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.heroSection .wrapper .floating-items .instagram {
+  top: 70%;
+  left: -100px;
+  animation: instagram 7s linear infinite;
+}
+
+.heroSection .wrapper .floating-items .instagram:before {
+  content: '';
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border: 1px solid #e6e6e6;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.heroSection .wrapper .floating-items .github {
+  top: 0px;
+  left: 250px;
+  animation: github 5s linear infinite;
+}
+
+.heroSection .wrapper .floating-items .github:before {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border: 1px solid #e6e6e6;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.heroSection .wrapper .floating-items .gmail {
+  bottom: 75px;
+  right: 200px;
+  animation: gmail 3s linear infinite;
+}
+
+.heroSection .wrapper .floating-items .gmail:before {
+  content: '';
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border: 1px solid #e6e6e6;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+@keyframes fbIcon {
+  0% {
+    top: 40px;
+  }
+  50% {
+    top: 70px;
+  }
+  100% {
+    top: 40px;
+  }
+}
+
+@keyframes instagram {
+  0% {
+    top: 70%;
+  }
+  50% {
+    top: 75%;
+  }
+  100% {
+    top: 70%;
+  }
+}
+
+@keyframes github {
+  0% {
+    top: 0px;
+  }
+  50% {
+    top: 10px;
+  }
+  100% {
+    top: 0px;
+  }
+}
+
+@keyframes gmail {
+  0% {
+    bottom: 75px;
+  }
+  50% {
+    bottom: 50px;
+  }
+  100% {
+    bottom: 75px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .heroSection .wrapper .floating-items {
+    margin-top: 40px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    animation: none;
+  }
+  .heroSection .wrapper .floating-items a {
+    position: initial;
+    width: 50px;
+    height: 50px;
+    top: 0;
+    left: 0;
+  }
+  .heroSection .wrapper .floating-items a span img {
+    width: 20px;
+  }
+  .heroSection .wrapper .floating-items .facebook {
+    top: 0;
+    right: 0;
+    animation: none;
+  }
+  .heroSection .wrapper .floating-items .facebook:before {
+    content: '';
+    width: 0;
+    height: 0;
+  }
+  .heroSection .wrapper .floating-items .instagram {
+    top: 0;
+    right: 0;
+    animation: none;
+  }
+  .heroSection .wrapper .floating-items .instagram:before {
+    content: '';
+    width: 0;
+    height: 0;
+  }
+  .heroSection .wrapper .floating-items .github {
+    top: 0;
+    right: 0;
+    animation: none;
+  }
+  .heroSection .wrapper .floating-items .github:before {
+    content: '';
+    width: 0;
+    height: 0;
+  }
+  .heroSection .wrapper .floating-items .gmail {
+    top: 0;
+    right: 0;
+  }
+  .heroSection .wrapper .floating-items .gmail:before {
+    content: '';
+    width: 0;
+    height: 0;
+  }
+}
+
+@media only screen and (max-width: 1050px) {
+  .heroSection {
+    width: 90%;
   }
 }
 /*# sourceMappingURL=main.css.map */

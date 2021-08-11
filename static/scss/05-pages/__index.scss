@@ -1,0 +1,339 @@
+.heroSection{
+    width: 1000px;
+    height: 650px;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    z-index: -1;
+    // border: 1px solid #000;
+    .wrapper{
+        .heroContent{
+            width: auto;
+            height: auto;
+            .HeroName{
+                font-size: 20px;
+                @media only screen and (max-width:600px){
+                    &{
+                        font-size: 16px;
+                    }
+                }
+            }
+            .HeroWork{
+                margin-bottom: 20px;
+                h1{
+                    font-size: 100px;
+                    font-weight: lighter;
+                    span{
+                        position: relative;
+                        display: block;
+                        &::after{
+                            content: '';
+                            position: absolute;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            z-index: 1;
+                            transform-origin: 100% 0;
+                            background-color: #fff;
+                        }
+                    }
+                    @media only screen and (max-width:950px){
+                        &{
+                            font-size: 70px;
+                        }
+                    }
+                    @media only screen and (max-width:600px){
+                        &{
+                            font-size: 40px;
+                        }
+                    }
+                
+                }
+            }
+            p{
+                margin-bottom: 30px;
+                @media only screen and (max-width:600px){
+                    &{
+                        font-size: 14px;
+                    }
+                }
+            }
+            a{
+                padding: 8px 17px;
+                font-weight: bold;
+                border: 2px solid $primary-black;
+                @media only screen and (max-width:600px){
+                    &{
+                        padding: 4px 12px;
+                        font-size: 14px;
+                    }
+                }
+            }
+            a:hover{
+                border: none;
+            }
+            .glitch-it {
+
+                .char,
+                .char:before,
+                .char:after {
+                  transition: color 0.2s linear;
+                  animation-duration: 0.6s, 0.4s;
+              
+                  animation-iteration-count: infinite;
+                  animation-timing-function: steps(1);
+                  animation-delay: calc( -0.1s * var(--char-index) );
+                }
+              
+                .char:before,
+                .char:after {
+                     visibility: visible;
+                  opacity: 0;
+                  mix-blend-mode: overlay;
+                  transition-property: opacity;
+                  animation-name: glitch-anim, glitch-bounce;
+                  animation-play-state: paused;
+                }
+              
+                .char:before {
+                  color: #5986f8;
+                  animation-delay: calc( -0.02s * var(--char-index) );
+                }
+              
+                .char:after {
+                  color: #f0495f; 
+                  animation-delay: calc( -.5s * var(--char-index) );
+                }
+              
+                &:hover .char { color: rgba(80, 77, 77, 0.8); animation-name: glitch-bounce; }
+                &:hover .char:before,
+                &:hover .char:after { opacity: 1; animation-play-state: running; }
+              
+              }
+              
+              @keyframes glitch-bounce {
+                20% { transform: translate(-1%,0%); }
+                40% { transform: translate(14%,-2%); }
+                50% { transform: translate(-5%,5%); }
+                65% { transform: translate(1%,-2%); }
+                80% { transform: translate(-3%,2%); }
+              }
+              
+              @keyframes glitch-anim {
+                0% { clip-path: polygon(0 70%, 100% 70%, 100% 75%, 0 75%); }
+                20% { clip-path: polygon(0 10%, 100% 10%, 100% 20%, 0 20%); }
+                40% { clip-path: polygon(0 33%, 100% 33%, 100% 33%, 0 33%); }
+                60% { clip-path: polygon(0 50%, 100% 50%, 100% 20%, 0 20%); }
+                80% { clip-path: polygon(0 80%, 100% 80%, 100% 80%, 0 80%); }
+                100% { clip-path: polygon(0 70%, 100% 70%, 100% 80%, 0 80%); }
+              }
+              
+        }
+        .floating-items{
+            a{
+                position:absolute;
+                width: 70px;
+                height: 70px;
+                box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.193);
+                display: flex;
+                align-items: center;
+                border-radius: 10px;
+                z-index: -1;
+
+                justify-content: center;
+                span{
+                    img{
+                        width: 30px;
+                        z-index: -10;
+                    }
+                }
+                &::before{
+                    transition: .5s ease;
+                }
+                &:hover::before{
+                    width: 0px;
+                    height: 0px;
+                }
+            }
+
+            .facebook{
+                top:40px;
+                right: -50px;
+                animation: fbIcon 5s linear infinite;
+
+                &:before{
+                    content: '';
+                    position: absolute;
+                    width: 500px;
+                    height: 500px;
+                    border: 1px solid rgb(230, 230, 230);
+                    border-radius: 50%;
+                    pointer-events: none;
+                }
+            }
+        
+            .instagram{
+                top:70%;
+                left: -100px;
+                animation: instagram 7s linear infinite;
+
+                &:before{
+                    content: '';
+                    position: absolute;
+                    width: 600px;
+                    height: 600px;
+                    border: 1px solid rgb(230, 230, 230);
+                    border-radius: 50%;
+                    pointer-events: none;
+                }
+            }
+            .github{
+                top:0px;
+                left: 250px;
+                animation: github 5s linear infinite;
+
+                &:before{
+                    content: '';
+                    position: absolute;
+                    width: 300px;
+                    height: 300px;
+                    border: 1px solid rgb(230, 230, 230);
+                    border-radius: 50%;
+                    pointer-events: none;
+                }
+            }
+            .gmail{
+                bottom:75px;
+                right: 200px;
+                animation: gmail 3s linear infinite;
+
+                &:before{
+                    content: '';
+                    position: absolute;
+                    width: 350px;
+                    height: 350px;
+                    border: 1px solid rgb(230, 230, 230);
+                    border-radius: 50%;
+                    pointer-events: none;
+                }
+            }
+            @keyframes fbIcon {
+                0%{
+                    top:40px;
+                }
+                50%{
+                    top: 70px;
+                }
+                100%{
+                    top: 40px;
+                }
+            }
+            @keyframes instagram {
+                0%{
+                    top:70%;
+                }
+                50%{
+                    top: 75%;
+                }
+                100%{
+                    top: 70%;
+                }
+            }
+            @keyframes github {
+                0%{
+                    top:0px;
+                }
+                50%{
+                    top:10px;
+                }
+                100%{
+                    top:0px;
+                }
+            }
+            @keyframes gmail {
+                0%{
+                    bottom:75px;
+                }
+                50%{
+                    bottom:50px;
+                }
+                100%{
+                    bottom: 75px;
+                }
+            }
+            @media only screen and (max-width:600px){
+                &{
+                    margin-top: 40px;
+                    position: relative;
+                    display: flex;
+                    justify-content: space-between;
+                    
+                    // border: 1px solid #000;
+                    a{
+                        position: initial;
+                        width: 50px;
+                        height: 50px;
+                        top: 0;
+                        left: 0;
+                        span{
+                            img{
+                                width: 20px;
+                            }
+                        }
+                    }
+                    .facebook{
+                        top: 0;
+                        right: 0;
+                        &:before{
+                            content: '';
+                            width: 0;
+                            height: 0;
+                        }
+                        animation: none;
+                    }
+                    .instagram{
+                        top: 0;
+                        right: 0;
+                        &:before{
+                            content: '';
+                            width: 0;
+                            height: 0;
+                        }
+                        animation: none;
+
+                    }
+                    .github{
+                        top: 0;
+                        right: 0;
+                        &:before{
+                            content: '';
+                            width: 0;
+                            height: 0;
+                        }
+                        animation: none;
+
+                    }
+                    .gmail{
+                        top: 0;
+                        right: 0;
+                        &:before{
+                            content: '';
+                            width: 0;
+                            height: 0;
+                        }
+                    }
+                    animation: none;
+
+                }
+            }
+
+        }
+
+    
+    }
+    @media only screen and (max-width:1050px){
+        &{
+            width: 90%;
+        }
+    }
+}

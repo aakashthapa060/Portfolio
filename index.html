@@ -14,6 +14,10 @@
     <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css" />
     <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting-cells.css" />
     <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+    <!-- Gsap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js" integrity="sha512-UxP+UhJaGRWuMG2YC6LPWYpFQnsSgnor0VUF3BHdD83PS/pOpN+FYbZmrYN+ISX8jnvgVUciqP/fILOXDjZSwg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/CSSRulePlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
     <script src="./static/js/locomotive.js"></script>
@@ -21,14 +25,14 @@
 
 <body>
     <div data-scroll-container>
-        <nav>
+        <nav data-scroll-section>
             <div class="nav_logo">
                 <h2><a href="#">Aakash</a></h2>
             </div>
             <div class="nav_items">
                 <div class="nav_links">
                     <ul>
-                        <li class="nav_item"><a href="#" class = "nav-link" data-splitting >Playground</a></li>
+                        <li class="nav_item"><a href="#" class = "nav-link" data-splitting >Showcase</a></li>
                         <li class="nav_item"><a href="#" class = "nav-link" data-splitting>About me</a></li>
                         <li class="nav_item"><a href="#" class = "nav-link" data-splitting>Services</a></li>
 
@@ -73,6 +77,39 @@
 
             </div>
         </nav>
+        
+        <!-- Landing Page -->
+        <div class="heroSection" data-scroll-section> 
+            <div class="wrapper">
+                <div class="heroContent">
+
+                        <h2 class="HeroName hero-item">Aakash Thapa</h2>
+
+                    <div class="HeroWork">
+                        <h1><span>Full-Stack</span>
+                        <span>Web Developer</span>
+                        </h1>
+                    </div>
+                    <p class="hero-item"> I am a creative web developer, I can help you with <br> building your design into upstanding website from scratch. </p>
+                    <a href="#" class="glitch-it hero-item" data-splitting>Explore More</a>
+                </div>
+                <div class="floating-items">
+                    <a href="#" class="facebook">
+                        <span><img src="./static/img/facebook.svg" alt="facebook"></span>
+                    </a>
+                    <a href="" class="instagram">
+                        <span><img src="./static/img/instagram.svg" alt=""></span>
+                    </a>
+                    <a href="" class="github">
+                        <span><img src="./static/img/github.svg" alt=""></span>
+                    </a>
+                    <a href="" class="gmail">
+                        <span><img src="./static/img/gmail.svg" alt=""></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
     </div>
 </body>
 <script>Splitting();</script>
