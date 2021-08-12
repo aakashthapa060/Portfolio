@@ -33,7 +33,7 @@ ol li {
 
 a {
   text-decoration: none;
-  color: #111;
+  color: #222;
 }
 
 @font-face {
@@ -64,6 +64,19 @@ a {
   font-family: 'TTHoves';
   src: url("../../../static/fonts/TTHoves/TTHoves-Medium.woff2");
   font-weight: bold;
+}
+
+.cursor {
+  width: 30px;
+  height: 30px;
+  border: 2px solid #222;
+  position: absolute;
+  border-radius: 50%;
+  top: -50px;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: .4s;
+  transition-timing-function: ease-out;
 }
 
 nav {
@@ -115,7 +128,7 @@ nav .nav_items .nav_links ul .nav_item .nav-link {
 
 nav .nav_items .nav_links ul .nav_item .nav-link .char {
   position: relative;
-  color: #111;
+  color: #222;
   transition: all .3s ease;
 }
 
@@ -306,7 +319,7 @@ nav .hamBurger-menu {
   nav .hamBurger-menu .hamBurger-container div {
     width: 24px;
     height: 2px;
-    background-color: #111;
+    background-color: #222;
     margin-bottom: 3px;
   }
   nav .hamBurger-menu .hamBurger-container div:last-child {
@@ -328,7 +341,7 @@ nav .hamBurger-menu {
 
 .heroSection {
   width: 1000px;
-  height: 650px;
+  height: 600px;
   display: flex;
   align-items: center;
   margin: 0 auto;
@@ -427,7 +440,7 @@ nav .hamBurger-menu {
 .heroSection .wrapper .heroContent a {
   padding: 8px 17px;
   font-weight: bold;
-  border: 2px solid #111;
+  border: 2px solid #222;
 }
 
 @media only screen and (max-width: 600px) {
@@ -524,6 +537,7 @@ nav .hamBurger-menu {
 .heroSection .wrapper .floating-items a {
   position: absolute;
   width: 70px;
+  opacity: 0;
   height: 70px;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.193);
   display: flex;

@@ -1,0 +1,13 @@
+.cursor{
+    width: 30px;
+    height: 30px;
+    border: 2px solid $primary-black;
+    position: absolute;
+    border-radius: 50%;
+    top: -50px;
+    pointer-events: none;
+    transform: translate(-50%,-50%);
+    transition: .4s;
+    transition-timing-function: ease-out;
+    
+}

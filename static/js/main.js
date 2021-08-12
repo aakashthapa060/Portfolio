@@ -10,10 +10,12 @@ function heroSectionOpAnimation(){
     let rule = CSSRulePlugin.getRule(".heroSection .wrapper .heroContent .HeroWork h1 span::after")
     gsap.to(rule, {cssRule: {scaleY: 0}, duration: 1});
     gsap.from(".heroSection .wrapper .heroContent .hero-item", {y:50, duration: 1, opacity:0,stagger: .5})
+
+    gsap.to(".heroSection .wrapper .floating-items a", {opacity: 1, stagger: .5, duration: 1})
 }
 
 function HeroIdeasAnimation(){
-    let heroIdeas =document.querySelectorAll(".heroContent .heroIdeas ul li");
+    let heroIdeas = document.querySelectorAll(".heroContent .heroIdeas ul li");
     let heroIdeasSection = document.querySelector(".heroContent .heroIdeas ul");
     let slide = 0
     let slided = 32
