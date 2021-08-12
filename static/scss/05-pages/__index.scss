@@ -10,8 +10,36 @@
         .heroContent{
             width: auto;
             height: auto;
-            .HeroName{
-                font-size: 20px;
+            .heroIdeas{
+                width: auto;
+                height: 32px;
+                position: relative;
+                margin-bottom: 20px;
+
+                overflow: hidden;
+                ul{
+                    width: 100%;
+                    transition: 0.5s ease;
+                    
+                    position: absolute;
+                    li{
+
+                        position: relative;
+                        height: 32px;
+
+                        
+                        &:first-child{
+                            animation-delay: 1s;
+                        }
+                    }
+                }
+            }
+
+            .HeroIdeaItem{
+                font-size: 18px;
+                .emoji{
+                    font-size: 20px;
+                }
                 @media only screen and (max-width:600px){
                     &{
                         font-size: 16px;
