@@ -77,6 +77,7 @@ a {
   transform: translate(-50%, -50%);
   transition: .4s;
   transition-timing-function: ease-out;
+  z-index: 10;
 }
 
 nav {
@@ -346,6 +347,7 @@ nav .hamBurger-menu {
   align-items: center;
   margin: 0 auto;
   z-index: -1;
+  margin-bottom: 200px;
 }
 
 .heroSection .wrapper .heroContent {
@@ -736,5 +738,38 @@ nav .hamBurger-menu {
   .heroSection {
     width: 90%;
   }
+}
+
+.projectSection {
+  width: 100%;
+  height: auto;
+  background-color: #f1f1f1;
+}
+
+.projectSection .wrapper {
+  width: 1100px;
+  margin: auto;
+  padding: 40px 0;
+}
+
+.projectSection .wrapper .projectSectionTitle h2 {
+  font-size: 60px;
+}
+
+.projectSection .wrapper .projectSectionTitle h2 span {
+  position: relative;
+  top: 50px;
+  display: block;
+  font-weight: lighter;
+}
+
+.projectSection .wrapper .projectSectionTitle h2 span:last-child {
+  position: relative;
+  left: 50px;
+  color: #222;
+  -webkit-text-fill-color: white;
+  /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #222;
 }
 /*# sourceMappingURL=main.css.map */

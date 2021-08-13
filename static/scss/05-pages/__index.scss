@@ -5,6 +5,7 @@
     align-items: center;
     margin: 0 auto;
     z-index: -1;
+    margin-bottom: 200px;
     // border: 1px solid #000;
     .wrapper{
         .heroContent{
@@ -363,6 +364,39 @@
     @media only screen and (max-width:1050px){
         &{
             width: 90%;
+        }
+    }
+}
+
+.projectSection{
+    width: 100%;
+    height: auto;
+    background-color: #f1f1f1;
+    .wrapper{
+        width: 1100px;
+        margin: auto;
+        padding: 40px 0;
+        .projectSectionTitle{
+            h2{
+                font-size: 60px;
+
+                span{
+                    position: relative;
+                    top: 50px;
+                    // opacity: 0;
+                    display: block;
+                    font-weight: lighter;
+                    &:last-child{
+                        position: relative;
+                        left: 50px;
+                        color: $primary-black;
+                        -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+                        -webkit-text-stroke-width: 1px;
+                        -webkit-text-stroke-color: $primary-black;
+                        // font-weight: bold;
+                    }
+                }
+            }
         }
     }
 }
