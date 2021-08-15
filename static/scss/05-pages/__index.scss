@@ -380,14 +380,22 @@
             h2{
                 font-size: 60px;
 
-                span{
+                .outer{
                     position: relative;
-                    top: 50px;
-                    // opacity: 0;
+                    width: auto;
+                    height: auto;
+                    // border: 1px solid #000;
                     display: block;
                     font-weight: lighter;
-                    &:last-child{
+                    overflow: hidden;
+                    .inner{
+                    opacity: 0;
+
                         position: relative;
+                        top: 100px;
+                    }
+                    &:last-child{
+                        // position: relative;
                         left: 50px;
                         color: $primary-black;
                         -webkit-text-fill-color: white; /* Will override color (regardless of order) */

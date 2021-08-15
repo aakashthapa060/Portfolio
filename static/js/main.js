@@ -5,7 +5,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 const locoScroll = new LocomotiveScroll({
     smooth: true,
-    multiplier: .5,
+    multiplier: .6,
     scrollbarContainer:false
 });
 
@@ -20,7 +20,7 @@ ScrollTrigger.scrollerProxy(".smooth-scroll", {
     },
     // LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
     pinType: document.querySelector(".smooth-scroll").style.transform ? "transform" : "fixed"
-  });
+});
 
 function heroSectionOpAnimation(){
     let rule = CSSRulePlugin.getRule(".heroSection .wrapper .heroContent .HeroWork h1 span::after")
@@ -31,21 +31,20 @@ function heroSectionOpAnimation(){
 }
 
 
-gsap.to(".projectSection .wrapper .projectSectionTitle h2 span", {
+gsap.to(".projectSection .wrapper .projectSectionTitle h2 .outer .inner", {
     scrollTrigger: {
-        trigger: ".projectSection .wrapper .projectSectionTitle h2 span",
+        trigger: ".projectSection .wrapper .projectSectionTitle h2 .outer .inner",
         start: "0px 90%",
-        markers:true,
-        toggleActions: "restart pause resume none"
+        scroller: ".smooth-scroll",
+        // toggleActions: "restart pause resume none"
         },
     top: 0,
     opacity: 1,
     stagger:.5,
-    duration: 1
+    duration: .5
 })        
 
-ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
-ScrollTrigger.refresh();
+
 
 function HeroIdeasAnimation(){
     let heroIdeas = document.querySelectorAll(".heroContent .heroIdeas ul li");
@@ -77,3 +76,5 @@ window.addEventListener("load", () => {
     HeroIdeasAnimation()
 
 })
+ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+ScrollTrigger.refresh();
