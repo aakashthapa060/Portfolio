@@ -41,11 +41,9 @@ gsap.to(".projectSection .wrapper .projectSectionTitle h2 .outer .inner", {
     top: 0,
     opacity: 1,
     stagger:.5,
-    duration: .5
+    duration: .5,
+    // markers: true
 })        
-
-
-
 function HeroIdeasAnimation(){
     let heroIdeas = document.querySelectorAll(".heroContent .heroIdeas ul li");
     let heroIdeasSection = document.querySelector(".heroContent .heroIdeas ul");
@@ -69,11 +67,65 @@ function HeroIdeasAnimation(){
     }, 3000);
 
 }
+// let rule = CSSRulePlugin.getRule(".projectSection .wrapper .projects .card1 .project-img::after")
+// gsap.to(rule, {cssRule: {scaleY: 0}, duration: 1});
+function cardInnerAnimation(cardNumber){
+    gsap.from(".projectSection .wrapper .projects" + " ." + cardNumber + " " +  ".project-content .project-title", {
+        scrollTrigger: {
+            trigger: ".projectSection .wrapper .projects" + " ." + cardNumber + " " + ".project-content .project-title",
+            start: "0px 90%",
+            scroller: ".smooth-scroll",
+            // toggleActions: "restart pause resume none"
+        },
+        opacity: 0,
+        y: 50,
+        duration: 1,
+    })
+    // console.log(cardNumber)
+    gsap.from(".projectSection .wrapper .projects" + " ." + cardNumber +  " .project-content .project-breif", {
+        scrollTrigger: {
+            trigger: ".projectSection .wrapper .projects " + " ." + cardNumber +  "  .project-content .project-breif",
+            start: "0px 90%",
+            scroller: ".smooth-scroll",
+            // toggleActions: "restart pause resume none"
+        },
+        opacity: 0,
+        y: 50,
+        duration: 1.5,
+    })
+}
+function cardImgAnimation(cardNumber){
+    gsap.to(".projectSection .wrapper .projects " + "." + cardNumber +  " .project-img .cover", {
+        scrollTrigger: {
+            trigger: ".projectSection .wrapper .projects " + "." + cardNumber +  " .project-img",
+            start: "0px 60%",
+            scroller: ".smooth-scroll",
+            // toggleActions: "restart pause resume none"
+        },
+        y: -100 + "%",
+        duration: 1.5,
+    })
+}
+function projectCardonScroll(){
+    // Img
+    cardImgAnimation("card1")
+    cardImgAnimation("card2")
+    cardImgAnimation("card3")
+
+
+    // Title
+    cardInnerAnimation("card1")
+    cardInnerAnimation("card2")
+    cardInnerAnimation("card3")
+}
+
+
+
 window.addEventListener("load", () => {
 
     heroSectionOpAnimation()
-    // projectShowcaseAnimation()
     HeroIdeasAnimation()
+    projectCardonScroll()
 
 })
 ScrollTrigger.addEventListener("refresh", () => locoScroll.update());

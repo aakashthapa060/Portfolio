@@ -1,4 +1,4 @@
-.heroSection{
+.heroSection {
     width: 1000px;
     height: 600px;
     display: flex;
@@ -6,56 +6,66 @@
     margin: 0 auto;
     z-index: -1;
     margin-bottom: 200px;
+
     // border: 1px solid #000;
-    .wrapper{
-        .heroContent{
+    .wrapper {
+        .heroContent {
             width: auto;
             height: auto;
-            .heroIdeas{
+
+            .heroIdeas {
                 width: auto;
                 height: 32px;
                 position: relative;
                 margin-bottom: 20px;
 
                 overflow: hidden;
-                ul{
+
+                ul {
                     width: 100%;
                     transition: 0.5s ease;
-                    
+
                     position: absolute;
-                    li{
+
+                    li {
 
                         position: relative;
                         height: 32px;
 
-                        
-                        &:first-child{
+
+                        &:first-child {
                             animation-delay: 1s;
                         }
                     }
                 }
             }
 
-            .HeroIdeaItem{
+            .HeroIdeaItem {
                 font-size: 18px;
-                .emoji{
+
+                .emoji {
                     font-size: 20px;
                 }
-                @media only screen and (max-width:600px){
-                    &{
+
+                @media only screen and (max-width:600px) {
+                    & {
                         font-size: 16px;
                     }
                 }
             }
-            .HeroWork{
+
+            .HeroWork {
                 margin-bottom: 20px;
-                h1{
+
+                h1 {
                     font-size: 100px;
                     font-weight: lighter;
-                    span{
+
+                    span {
                         position: relative;
                         display: block;
-                        &::after{
+
+                        &::after {
                             content: '';
                             position: absolute;
                             left: 0;
@@ -66,101 +76,148 @@
                             background-color: #fff;
                         }
                     }
-                    @media only screen and (max-width:950px){
-                        &{
+
+                    @media only screen and (max-width:950px) {
+                        & {
                             font-size: 70px;
                         }
                     }
-                    @media only screen and (max-width:600px){
-                        &{
+
+                    @media only screen and (max-width:600px) {
+                        & {
                             font-size: 40px;
                         }
                     }
-                
+
                 }
             }
-            p{
+
+            p {
                 margin-bottom: 30px;
-                @media only screen and (max-width:600px){
-                    &{
+
+                @media only screen and (max-width:600px) {
+                    & {
                         font-size: 14px;
                     }
                 }
             }
-            a{
+
+            a {
                 padding: 8px 17px;
                 font-weight: bold;
                 border: 2px solid $primary-black;
-                @media only screen and (max-width:600px){
-                    &{
+
+                @media only screen and (max-width:600px) {
+                    & {
                         padding: 4px 12px;
                         font-size: 14px;
                     }
                 }
             }
-            a:hover{
+
+            a:hover {
                 border: none;
             }
+
             .glitch-it {
 
                 .char,
                 .char:before,
                 .char:after {
-                  transition: color 0.2s linear;
-                  animation-duration: 0.6s, 0.4s;
-              
-                  animation-iteration-count: infinite;
-                  animation-timing-function: steps(1);
-                  animation-delay: calc( -0.1s * var(--char-index) );
+                    transition: color 0.2s linear;
+                    animation-duration: 0.6s, 0.4s;
+
+                    animation-iteration-count: infinite;
+                    animation-timing-function: steps(1);
+                    animation-delay: calc(-0.1s * var(--char-index));
                 }
-              
+
                 .char:before,
                 .char:after {
-                     visibility: visible;
-                  opacity: 0;
-                  mix-blend-mode: overlay;
-                  transition-property: opacity;
-                  animation-name: glitch-anim, glitch-bounce;
-                  animation-play-state: paused;
+                    visibility: visible;
+                    opacity: 0;
+                    mix-blend-mode: overlay;
+                    transition-property: opacity;
+                    animation-name: glitch-anim, glitch-bounce;
+                    animation-play-state: paused;
                 }
-              
+
                 .char:before {
-                  color: #5986f8;
-                  animation-delay: calc( -0.02s * var(--char-index) );
+                    color: #5986f8;
+                    animation-delay: calc(-0.02s * var(--char-index));
                 }
-              
+
                 .char:after {
-                  color: #f0495f; 
-                  animation-delay: calc( -.5s * var(--char-index) );
+                    color: #f0495f;
+                    animation-delay: calc(-.5s * var(--char-index));
                 }
-              
-                &:hover .char { color: rgba(80, 77, 77, 0.8); animation-name: glitch-bounce; }
+
+                &:hover .char {
+                    color: rgba(80, 77, 77, 0.8);
+                    animation-name: glitch-bounce;
+                }
+
                 &:hover .char:before,
-                &:hover .char:after { opacity: 1; animation-play-state: running; }
-              
-              }
-              
-              @keyframes glitch-bounce {
-                20% { transform: translate(-1%,0%); }
-                40% { transform: translate(14%,-2%); }
-                50% { transform: translate(-5%,5%); }
-                65% { transform: translate(1%,-2%); }
-                80% { transform: translate(-3%,2%); }
-              }
-              
-              @keyframes glitch-anim {
-                0% { clip-path: polygon(0 70%, 100% 70%, 100% 75%, 0 75%); }
-                20% { clip-path: polygon(0 10%, 100% 10%, 100% 20%, 0 20%); }
-                40% { clip-path: polygon(0 33%, 100% 33%, 100% 33%, 0 33%); }
-                60% { clip-path: polygon(0 50%, 100% 50%, 100% 20%, 0 20%); }
-                80% { clip-path: polygon(0 80%, 100% 80%, 100% 80%, 0 80%); }
-                100% { clip-path: polygon(0 70%, 100% 70%, 100% 80%, 0 80%); }
-              }
-              
+                &:hover .char:after {
+                    opacity: 1;
+                    animation-play-state: running;
+                }
+
+            }
+
+            @keyframes glitch-bounce {
+                20% {
+                    transform: translate(-1%, 0%);
+                }
+
+                40% {
+                    transform: translate(14%, -2%);
+                }
+
+                50% {
+                    transform: translate(-5%, 5%);
+                }
+
+                65% {
+                    transform: translate(1%, -2%);
+                }
+
+                80% {
+                    transform: translate(-3%, 2%);
+                }
+            }
+
+            @keyframes glitch-anim {
+                0% {
+                    clip-path: polygon(0 70%, 100% 70%, 100% 75%, 0 75%);
+                }
+
+                20% {
+                    clip-path: polygon(0 10%, 100% 10%, 100% 20%, 0 20%);
+                }
+
+                40% {
+                    clip-path: polygon(0 33%, 100% 33%, 100% 33%, 0 33%);
+                }
+
+                60% {
+                    clip-path: polygon(0 50%, 100% 50%, 100% 20%, 0 20%);
+                }
+
+                80% {
+                    clip-path: polygon(0 80%, 100% 80%, 100% 80%, 0 80%);
+                }
+
+                100% {
+                    clip-path: polygon(0 70%, 100% 70%, 100% 80%, 0 80%);
+                }
+            }
+
         }
-        .floating-items{
-            a{
-                position:absolute;
+
+        .floating-items {
+            a {
+                position: absolute;
                 width: 70px;
                 opacity: 0;
                 height: 70px;
@@ -171,27 +228,30 @@
                 z-index: -1;
 
                 justify-content: center;
-                span{
-                    img{
+
+                span {
+                    img {
                         width: 30px;
                         z-index: -10;
                     }
                 }
-                &::before{
+
+                &::before {
                     transition: .5s ease;
                 }
-                &:hover::before{
+
+                &:hover::before {
                     width: 0px;
                     height: 0px;
                 }
             }
 
-            .facebook{
-                top:40px;
+            .facebook {
+                top: 40px;
                 right: -50px;
                 animation: fbIcon 5s linear infinite;
 
-                &:before{
+                &:before {
                     content: '';
                     position: absolute;
                     width: 500px;
@@ -201,13 +261,13 @@
                     pointer-events: none;
                 }
             }
-        
-            .instagram{
-                top:70%;
+
+            .instagram {
+                top: 70%;
                 left: -100px;
                 animation: instagram 7s linear infinite;
 
-                &:before{
+                &:before {
                     content: '';
                     position: absolute;
                     width: 600px;
@@ -217,12 +277,13 @@
                     pointer-events: none;
                 }
             }
-            .github{
-                top:0px;
+
+            .github {
+                top: 0px;
                 left: 250px;
                 animation: github 5s linear infinite;
 
-                &:before{
+                &:before {
                     content: '';
                     position: absolute;
                     width: 300px;
@@ -232,12 +293,13 @@
                     pointer-events: none;
                 }
             }
-            .gmail{
-                bottom:75px;
+
+            .gmail {
+                bottom: 75px;
                 right: 200px;
                 animation: gmail 3s linear infinite;
 
-                &:before{
+                &:before {
                     content: '';
                     position: absolute;
                     width: 350px;
@@ -247,111 +309,137 @@
                     pointer-events: none;
                 }
             }
+
             @keyframes fbIcon {
-                0%{
-                    top:40px;
+                0% {
+                    top: 40px;
                 }
-                50%{
+
+                50% {
                     top: 70px;
                 }
-                100%{
+
+                100% {
                     top: 40px;
                 }
             }
+
             @keyframes instagram {
-                0%{
-                    top:70%;
+                0% {
+                    top: 70%;
                 }
-                50%{
+
+                50% {
                     top: 75%;
                 }
-                100%{
+
+                100% {
                     top: 70%;
                 }
             }
+
             @keyframes github {
-                0%{
-                    top:0px;
+                0% {
+                    top: 0px;
                 }
-                50%{
-                    top:10px;
+
+                50% {
+                    top: 10px;
                 }
-                100%{
-                    top:0px;
+
+                100% {
+                    top: 0px;
                 }
             }
+
             @keyframes gmail {
-                0%{
-                    bottom:75px;
+                0% {
+                    bottom: 75px;
                 }
-                50%{
-                    bottom:50px;
+
+                50% {
+                    bottom: 50px;
                 }
-                100%{
+
+                100% {
                     bottom: 75px;
                 }
             }
-            @media only screen and (max-width:600px){
-                &{
+
+            @media only screen and (max-width:600px) {
+                & {
                     margin-top: 40px;
                     position: relative;
                     display: flex;
                     justify-content: space-between;
-                    
+
                     // border: 1px solid #000;
-                    a{
+                    a {
                         position: initial;
                         width: 50px;
                         height: 50px;
                         top: 0;
                         left: 0;
-                        span{
-                            img{
+
+                        span {
+                            img {
                                 width: 20px;
                             }
                         }
                     }
-                    .facebook{
+
+                    .facebook {
                         top: 0;
                         right: 0;
-                        &:before{
+
+                        &:before {
                             content: '';
                             width: 0;
                             height: 0;
                         }
+
                         animation: none;
                     }
-                    .instagram{
+
+                    .instagram {
                         top: 0;
                         right: 0;
-                        &:before{
+
+                        &:before {
                             content: '';
                             width: 0;
                             height: 0;
                         }
+
                         animation: none;
 
                     }
-                    .github{
+
+                    .github {
                         top: 0;
                         right: 0;
-                        &:before{
+
+                        &:before {
                             content: '';
                             width: 0;
                             height: 0;
                         }
+
                         animation: none;
 
                     }
-                    .gmail{
+
+                    .gmail {
                         top: 0;
                         right: 0;
-                        &:before{
+
+                        &:before {
                             content: '';
                             width: 0;
                             height: 0;
                         }
                     }
+
                     animation: none;
 
                 }
@@ -359,28 +447,33 @@
 
         }
 
-    
+
     }
-    @media only screen and (max-width:1050px){
-        &{
+
+    @media only screen and (max-width:1050px) {
+        & {
             width: 90%;
         }
     }
 }
 
-.projectSection{
+.projectSection {
     width: 100%;
     height: auto;
     background-color: #f1f1f1;
-    .wrapper{
+
+    .wrapper {
         width: 1100px;
         margin: auto;
         padding: 40px 0;
-        .projectSectionTitle{
-            h2{
+
+        .projectSectionTitle {
+            margin-bottom: 100px;
+
+            h2 {
                 font-size: 60px;
 
-                .outer{
+                .outer {
                     position: relative;
                     width: auto;
                     height: auto;
@@ -388,20 +481,157 @@
                     display: block;
                     font-weight: lighter;
                     overflow: hidden;
-                    .inner{
-                    opacity: 0;
+
+                    .inner {
+                        opacity: 0;
 
                         position: relative;
                         top: 100px;
                     }
-                    &:last-child{
+
+                    &:last-child {
                         // position: relative;
                         left: 50px;
                         color: $primary-black;
-                        -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+                        -webkit-text-fill-color: white;
+                        /* Will override color (regardless of order) */
                         -webkit-text-stroke-width: 1px;
                         -webkit-text-stroke-color: $primary-black;
                         // font-weight: bold;
+                    }
+                }
+            }
+        }
+
+        .projects {
+            width: 100%;
+            height: auto;
+
+            .projects-card {
+                margin-bottom: 150px;
+                width: 100%;
+                height: auto;
+
+                .project-img {
+                    position: relative;
+                    width: 100%;
+                    margin-bottom: 40px;
+                    width: auto;
+                    overflow: hidden;
+                    height: auto;
+                    // opacity: 0;
+                    @include flexbox(center, center, row);
+                    .cover{
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        z-index: 1;
+                        background-color: #f1f1f1;
+                        bottom:0;
+                        left: 0;
+                    }
+                    img {
+                        width: 100%;
+                    }
+                }
+
+                .project-content {
+                    width: 100%;
+                    display: grid;
+                    grid-template-columns: 1fr 2fr;
+                    grid-template-rows: 1fr;
+
+                    .project-title {
+                        a {
+                            font-size: 35px;
+                        }
+                    }
+
+                    .project-breif {
+                        width: 100%;
+
+                        .projects-berif-top {
+                            width: 100%;
+                            margin-bottom: 20px;
+                            display: flex;
+                            justify-content: space-between;
+
+                            .role {
+                                font-size: 25px;
+                            }
+
+                            a {
+                                font-size: 20px;
+                            }
+                        }
+                    }
+
+                    .projects-berif-bottom {
+                        p {
+                            font-size: 18px;
+                            line-height: 30px;
+                        }
+                    }
+                }
+                @media only screen and (max-width: 700px){
+                    .project-content{
+                        grid-template-rows: 2fr;
+                        grid-template-columns: 1fr;
+                        .project-title{
+                            margin-bottom: 30px;
+                        }
+                    }
+                    
+                }
+                @media only screen and (max-width: 600px){
+                    .project-content{
+
+                        .project-title{
+                            a{
+                                font-size: 30px;
+                            }
+                        }
+                        .project-breif{
+                            .projects-berif-top{
+                                .role{
+                                    font-size: 20px;
+                                }
+                                a{
+                                    font-size: 18px;
+                                }
+                            }
+                            .projects-berif-bottom{
+                                p{
+                                    font-size: 16px;
+                                }
+                            }
+
+                        }
+                    }
+                    
+                }
+            }
+        }
+        @media only screen and (max-width: 1150px){
+            &{
+                width: 900px;
+            }
+        }
+        @media only screen and (max-width: 950px){
+            &{
+                width: 90%;
+                .projectSectionTitle{
+                    h2{
+                        font-size: 50px;
+                    }
+                }
+            }
+        }
+        @media only screen and (max-width: 700px){
+            &{
+                .projectSectionTitle{
+                    h2{
+                        font-size: 40px;
                     }
                 }
             }

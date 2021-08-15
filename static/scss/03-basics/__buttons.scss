@@ -1,0 +1,17 @@
+.primary-btn{
+    display: flex;   // font-size: 15px;
+    .char{
+        position: relative;
+        color: $primary-black;
+        transition: all .3s ease;
+    }
+    &:hover .char{
+        animation: replEffect .3s ease forwards;
+        animation-delay: calc(.05s * var(--char-index));
+    }
+    .icon{
+        position: relative;
+        font-size: 25px;
+        margin-left: 3px;
+    }
+}
