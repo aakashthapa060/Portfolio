@@ -88,6 +88,47 @@ a {
   margin-left: 3px;
 }
 
+.secondary-btn .char,
+.secondary-btn .char:before,
+.secondary-btn .char:after {
+  transition: color 0.2s linear;
+  animation-duration: 0.6s, 0.4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: steps(1);
+  animation-delay: calc(-0.1s * var(--char-index));
+}
+
+.secondary-btn .char:before,
+.secondary-btn .char:after {
+  visibility: visible;
+  opacity: 0;
+  mix-blend-mode: overlay;
+  transition-property: opacity;
+  animation-name: glitch-anim, glitch-bounce;
+  animation-play-state: paused;
+}
+
+.secondary-btn .char:before {
+  color: #5986f8;
+  animation-delay: calc(-0.02s * var(--char-index));
+}
+
+.secondary-btn .char:after {
+  color: #f0495f;
+  animation-delay: calc(-.5s * var(--char-index));
+}
+
+.secondary-btn:hover .char {
+  color: rgba(80, 77, 77, 0.8);
+  animation-name: glitch-bounce;
+}
+
+.secondary-btn:hover .char:before,
+.secondary-btn:hover .char:after {
+  opacity: 1;
+  animation-play-state: running;
+}
+
 .cursor {
   width: 30px;
   height: 30px;
@@ -360,6 +401,11 @@ nav .hamBurger-menu {
   100% {
     top: 0;
   }
+}
+
+.smooth-scroll {
+  width: auto;
+  height: auto;
 }
 
 .heroSection {
@@ -776,6 +822,9 @@ nav .hamBurger-menu {
 
 .projectSection .wrapper .projectSectionTitle {
   margin-bottom: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .projectSection .wrapper .projectSectionTitle h2 {
@@ -804,6 +853,16 @@ nav .hamBurger-menu {
   /* Will override color (regardless of order) */
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #262626;
+}
+
+.projectSection .wrapper .projectSectionTitle .viewAll-Projects a {
+  font-size: 20px;
+  display: flex;
+}
+
+.projectSection .wrapper .projectSectionTitle .viewAll-Projects a .icon {
+  font-size: 25px;
+  margin-left: 5px;
 }
 
 .projectSection .wrapper .projects {
@@ -922,6 +981,108 @@ nav .hamBurger-menu {
 @media only screen and (max-width: 700px) {
   .projectSection .wrapper .projectSectionTitle h2 {
     font-size: 40px;
+  }
+}
+
+.aboutMe {
+  width: 100%;
+  height: 600px;
+}
+
+.aboutMe .wrapper {
+  width: 1100px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.aboutMe .wrapper .aboutMeContent {
+  text-align: center;
+}
+
+.aboutMe .wrapper .aboutMeContent p {
+  font-size: 35px;
+  line-height: 50px;
+  margin-bottom: 40px;
+}
+
+.aboutMe .wrapper .aboutMeContent a {
+  padding: 10px 25px;
+  background-color: #262626;
+  color: #fff;
+}
+
+.aboutMe .wrapper .aboutMeContent a .char {
+  color: #fff;
+}
+
+@media only screen and (max-width: 1150px) {
+  .aboutMe .wrapper {
+    width: 90%;
+  }
+  .aboutMe .wrapper .aboutMeContent p {
+    font-size: 25px;
+  }
+}
+
+footer {
+  width: 100%;
+  height: 500px;
+  background-color: #262626;
+}
+
+footer .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  width: 1100px;
+  height: 100%;
+  margin: 0 auto;
+  color: #fff;
+}
+
+footer .wrapper .left {
+  width: auto;
+  height: auto;
+}
+
+footer .wrapper .left h2 {
+  color: #fff;
+  font-size: 80px;
+  font-weight: lighter;
+  margin-bottom: 40px;
+}
+
+footer .wrapper .left a {
+  color: #fff;
+  border-bottom: 1px solid #fff;
+}
+
+footer .wrapper .right p {
+  color: #fff;
+  text-align: right;
+}
+
+@media only screen and (max-width: 1150px) {
+  footer .wrapper {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  footer .wrapper {
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  footer .wrapper .left {
+    text-align: center;
+  }
+  footer .wrapper .right p {
+    text-align: center;
   }
 }
 /*# sourceMappingURL=main.css.map */

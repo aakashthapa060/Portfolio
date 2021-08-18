@@ -15,3 +15,46 @@
         margin-left: 3px;
     }
 }
+.secondary-btn{
+    .char,
+    .char:before,
+    .char:after {
+        transition: color 0.2s linear;
+        animation-duration: 0.6s, 0.4s;
+
+        animation-iteration-count: infinite;
+        animation-timing-function: steps(1);
+        animation-delay: calc(-0.1s * var(--char-index));
+    }
+
+    .char:before,
+    .char:after {
+        visibility: visible;
+        opacity: 0;
+        mix-blend-mode: overlay;
+        transition-property: opacity;
+        animation-name: glitch-anim, glitch-bounce;
+        animation-play-state: paused;
+    }
+
+    .char:before {
+        color: #5986f8;
+        animation-delay: calc(-0.02s * var(--char-index));
+    }
+
+    .char:after {
+        color: #f0495f;
+        animation-delay: calc(-.5s * var(--char-index));
+    }
+
+    &:hover .char {
+        color: rgba(80, 77, 77, 0.8);
+        animation-name: glitch-bounce;
+    }
+
+    &:hover .char:before,
+    &:hover .char:after {
+        opacity: 1;
+        animation-play-state: running;
+    }
+}
